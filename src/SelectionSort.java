@@ -5,13 +5,12 @@ public class SelectionSort {
     private static int comparisons = 0;
     private static int exchanges = 0;
 
-    private SelectionSort() {
-    }
+    private SelectionSort() { }
 
     public static SelectionSort getInstance() {
         if (instance == null)
-            return new SelectionSort();
-        else
+            instance = new SelectionSort();
+
             return instance;
     }
 

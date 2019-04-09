@@ -1,13 +1,14 @@
-class QuickSort {
+public class QuickSort {
     private static QuickSort instance;
 
     public static QuickSort getInstance() {
-        if (instance == null) {
-            return new QuickSort();
-        } else {
+        if (instance == null)
+            instance = new QuickSort();
+
             return instance;
-        }
     }
+
+    private QuickSort(){}
 
     public void sort(int[] tab, int l, int r) {
         int v = tab[(l + r) / 2];

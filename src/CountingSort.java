@@ -1,15 +1,16 @@
 import java.util.Arrays;
 
 class CountingSort {
-    private static CountingSort countingSort;
+    private static CountingSort instance;
 
     public static CountingSort getInstance() {
-        if (countingSort == null)
-            return new CountingSort();
-        else
-            return countingSort;
+        if (instance == null)
+            instance = new CountingSort();
+
+            return instance;
     }
 
+    private CountingSort(){}
     private int maxItem(int[] tab) {
         int max = tab[0];
         for (int i = 1; i < tab.length; i++) {
@@ -34,7 +35,7 @@ class CountingSort {
         for (int i = 1; i <= max; ++i)
             count[i] += count[i - 1];
 
-        System.out.println("Tablica countin: ");
+        System.out.println("Tablica counting: ");
         for (int i = 0; i < count.length; i++) {
             System.out.print(count[i] + " ");
         }

@@ -1,15 +1,16 @@
 import java.util.Arrays;
 
 public class InsertionSort {
-    private static InsertionSort insertionSort;
+    private static InsertionSort instance;
 
     public static InsertionSort getInstance() {
-        if (insertionSort == null)
-            return new InsertionSort();
-        else
-            return insertionSort;
+        if (instance == null)
+            instance = new InsertionSort();
+
+            return instance;
     }
 
+    private InsertionSort(){}
     public static void sort(int[] tab) {
         for (int i = 1; i < tab.length; i++) {
             int tmp = tab[i];

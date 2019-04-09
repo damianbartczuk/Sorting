@@ -1,16 +1,16 @@
-import java.util.Arrays;
 
 class MergeSort {
     private static MergeSort instance = null;
     public static int numberOfMerges = 0;
-    public static MergeSort getInstance(){
-        if (instance == null){
-            return new MergeSort();
-        }else{
+    public static MergeSort getInstance() {
+        if (instance == null)
+            instance = new MergeSort();
+
             return instance;
-        }
     }
-    private void merge(int tab[], int l, int m, int r) {
+    private MergeSort(){}
+
+    public void merge(int tab[], int l, int m, int r) {
         numberOfMerges++;
         int n1 = m - l + 1;
         int n2 = r - m;
